@@ -247,3 +247,19 @@ def convertTable(sudoku):
                 newDomain = set(getDomain(sudoku,x,y))
                 sudokuDomains[y].append(newDomain)
     return sudokuDomains
+
+def main():
+    print("Use only digits 0-9, with 0 denoting an empty square")
+    print("Input 9x9 Sudoku beginning with the top left most square")
+
+    inputList = []
+    for i in range(9):
+        inputRow = str(input())
+        inputRow = inputRow.split()
+        inputRow = [int(num) for num in inputRow]
+        inputList.append(inputRow)
+
+    print(sudoku_solver(inputList))
+
+if __name__ == "__main__":
+    main()
